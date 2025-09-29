@@ -13,7 +13,6 @@ All encryption happens **within your browser** — even if your local storage is
 - Autofill Support – Automatically fill login forms on saved websites  
 - Context Menu Integration – Right-click in username/password fields to fill credentials  
 - Password Generation – Generate strong random passwords with customizable length, symbols, and numbers  
-- Save Prompt – Detect new logins and prompt to save credentials  
 
 ---
 
