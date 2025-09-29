@@ -1,132 +1,118 @@
-# CipherGuard — Secure Browser Password Manager
+# 🔐 CipherGuard — Secure Browser Password Manager
 
-![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg) ![Language](https://img.shields.io/badge/Language-JavaScript-F7DF1E.svg) ![Platform](https://img.shields.io/badge/Platform-Chrome%20%7C%20Edge-blue.svg)
-
-**CipherGuard** is a secure browser extension that manages and protects your login credentials locally. All encryption happens within your browser — even if your local storage is compromised, attackers only see encrypted data.
-
----
-
-## 🚀 Features
-
--   **Master Password Protection**: Unlock your vault with a single master password.
--   **Auto & Manual Lock**: Vault automatically locks after inactivity; manually lock anytime.
--   **Credential Management**: Add, edit, delete, search, and copy credentials.
--   **Autofill Support**: Automatically fill login forms on saved websites.
--   **Context Menu Integration**: Right-click in username/password fields to fill credentials.
--   **Password Generation**: Generate strong random passwords with customizable length, symbols, and numbers.
--   **Save Prompt**: Detect new logins and prompt to save credentials.
+**CipherGuard** is a secure browser extension that manages and protects your login credentials **locally**.  
+All encryption happens **within your browser** — even if your local storage is compromised, attackers only see encrypted data.
 
 ---
 
-## 🛠️ Tech Stack & Security
+## ✨ Features
 
--   **Frontend**: Browser extension UI (popup, options page, content scripts)
--   **Background / Service Worker**: Handles encryption, vault state, and extension events
--   **Storage**: Encrypted vault stored locally using IndexedDB
--   **Encryption**: `AES-256-GCM` for confidentiality and integrity
--   **Key Derivation**: `PBKDF2` stretches master password into a cryptographic key
--   **Password Generation**: Uses `crypto.getRandomValues()` for secure randomness
-
-✅ **All sensitive data is stored locally — nothing is sent to external servers.**
+- Master Password Protection – Unlock your vault with a single master password  
+- Auto & Manual Lock – Vault automatically locks after inactivity; manually lock anytime  
+- Credential Management – Add, edit, delete, search, and copy credentials  
+- Autofill Support – Automatically fill login forms on saved websites  
+- Context Menu Integration – Right-click in username/password fields to fill credentials  
+- Password Generation – Generate strong random passwords with customizable length, symbols, and numbers  
+- Save Prompt – Detect new logins and prompt to save credentials  
 
 ---
 
-## 📦 Installation
+## 🛡️ Tech Stack & Security
 
-### Clone or Download Repo
+| Component         | Details                                                                 |
+|-------------------|-------------------------------------------------------------------------|
+| **Frontend**      | Browser extension UI (popup, options page, content scripts)             |
+| **Background**    | Service Worker handles encryption, vault state, and extension events    |
+| **Storage**       | Encrypted vault stored locally using IndexedDB                          |
+| **Encryption**    | AES-256-GCM for confidentiality and integrity                           |
+| **Key Derivation**| PBKDF2 stretches master password into a cryptographic key               |
+| **Password Gen**  | Uses `crypto.getRandomValues()` for secure randomness                   |
 
+🔒 **All sensitive data is stored locally — nothing is sent to external servers.**
+
+---
+
+## 🚀 Installation
+
+### 1. Clone or Download Repo
 ```bash
-git clone [https://github.com/Cyber-Security-July-Dec-2025/B3.git](https://github.com/Cyber-Security-July-Dec-2025/B3.git)
-Or download the ZIP → extract → open the cipherguard/ folder.
+git clone https://github.com/Cyber-Security-July-Dec-2025/B3.git
+```
 
-Load Extension
-Google Chrome
+## ⚡Load Extension
+### Google Chrome
+1. Open `chrome://extensions`
+2. Enable **Developer mode**
+3. Click **Load unpacked** → select the `extension/` folder
+---
+## 📌 Pin the Extension
 
-Open chrome://extensions
+1. Click the **puzzle icon** in the toolbar  
+2. Pin **CipherGuard** for quick access  
+---
+## 🔑 Usage
 
-Enable Developer mode
+- Unlock the vault with your **master password**  
+- Add new credentials (Website, Username, Password)  
+- Generate **strong passwords** instantly  
+- Search credentials by site or username  
+- Use the **lock button** to secure vault instantly  
+- Visit a saved website → fields are **autofilled** 
+---
+## 📂 Project Structure
 
-Click Load unpacked → select the extension folder
+- README.md
+- extension/
+  - background.js
+  - content.js
+  - manifest.json
+  - options.css
+  - options.html
+  - options.js
+  - popup.css
+  - popup.html
+  - popup.js
+- assets/
+  - icon.svg
+- scripts/
+  - crypto.js
+  - generator.js
+  - storage.js
 
-Microsoft Edge
 
-Open edge://extensions
 
-Enable Developer mode
+---
+## 🔒 Security Highlights
 
-Click Load unpacked → select the extension folder
+- **Local-Only Encryption** → Everything stays on your device  
+- **AES-256-GCM** → Ensures confidentiality & integrity  
+- **PBKDF2 Key Derivation** → Strengthens your master password  
+- **Auto & Manual Locking** → Prevents unauthorized access  
+---
+## 📸 Screenshots
 
-Pin the Extension
-Click the puzzle icon in the toolbar → pin CipherGuard.
+### Unlock Vault
+<img width="520" height="315" alt="image" src="https://github.com/user-attachments/assets/3d6e3fd6-8048-4606-b5e0-3e9ff137e90f" />
 
-🔑 Usage
-Unlock the vault with your master password.
 
-Add new credentials (Website, Username, Password).
+### Search Credentials
+<img width="532" height="362" alt="image" src="https://github.com/user-attachments/assets/77028afb-3c75-48c4-b4bc-e3f0a684730b" />
 
-Generate strong passwords as needed.
 
-Search for stored credentials by site or username.
+### Autofill
+<img width="774" height="702" alt="Screenshot 2025-09-30 000408" src="https://github.com/user-attachments/assets/ed28f155-e65d-468d-8c19-c68176843ca8" />
 
-Use the lock button to secure the vault instantly.
 
-Visit a website with saved credentials → fields are autofilled.
+### Generate Password
+<img width="503" height="120" alt="image" src="https://github.com/user-attachments/assets/df7787bf-5397-4aa0-ac9c-b5a5661e2dec" />
 
-New login detected → prompted to save credentials.
 
-📂 Project Structure
-.
-├── README.md
-└── extension/
-    ├── background.js
-    ├── content.js
-    ├── manifest.json
-    ├── options.css
-    ├── options.html
-    ├── options.js
-    ├── popup.css
-    ├── popup.html
-    ├── popup.js
-    ├── assets/
-    │   └── icon.svg
-    ├── scripts/
-    │   ├── crypto.js
-    │   ├── generator.js
-    │   └── storage.js
-    └── snapshots/
-        ├── autofill.png
-        ├── confirm.png
-        ├── generate.png
-        ├── homepage.png
-        ├── lock.png
-        ├── master.png
-        ├── password.png
-        ├── rightclick.png
-        └── search.png
-🔒 Security Highlights
-Local-Only Encryption: Everything stays on your device.
+### Lock Vault
+<img width="524" height="480" alt="image" src="https://github.com/user-attachments/assets/7bc53960-2eb9-463b-bef5-c3697106310b" />
 
-AES-256-GCM: Protects both the confidentiality and integrity of your data.
+---
+## 📄 License
 
-PBKDF2 Key Derivation: Strengthens your master password against brute-force attacks.
+This project is **MIT licensed** — see the `LICENSE` file for details.
 
-Auto & Manual Locking: Prevents unauthorized access when you're away from your computer.
 
-📸 Screenshots
-Unlock Vault	Search Credentials	Autofill
-Generate Password	Confirm Save	Lock Vault
-
-Export to Sheets
-🤝 Contributing
-Contributions are welcome! 🎉
-
-Follow the existing folder structure.
-
-Write clear and descriptive commit messages.
-
-Keep sensitive data out of the repository.
-
-Submit an issue or pull request anytime.
-
-📄 License
-This project is licensed under the MIT License — see the LICENSE file for details.
