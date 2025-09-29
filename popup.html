@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CipherGuard</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div id="app">
+    <header class="header">
+      <div class="brand">
+  <img src="assets/icon.svg" alt="CipherGuard" class="icon" />
+  <h1>CipherGuard</h1>
+      </div>
+      <button id="lockBtn" title="Lock" class="btn">Lock</button>
+    </header>
+
+    <section id="lockedView" class="view">
+      <label class="label">Master Password</label>
+      <input id="masterInput" class="input" type="password" autofocus />
+      <button id="unlockBtn" class="btn primary">Unlock</button>
+      <div id="unlockError" class="error"></div>
+    </section>
+
+    <section id="vaultView" class="view hidden">
+      <div class="toolbar">
+        <input id="search" class="input" type="text" placeholder="Search by username or site" />
+        <button id="addToggle" class="btn">+ Add</button>
+      </div>
+      <ul id="list" class="list"></ul>
+
+      <details id="addPanel" class="panel">
+        <summary class="summary">Add Credential</summary>
+        <label class="label">Origins (comma separated)</label>
+        <input id="inOrigins" class="input" type="text" placeholder="https://example.com" />
+        <label class="label">Username</label>
+        <input id="inUser" class="input" type="text" />
+        <label class="label">Password</label>
+        <div class="row">
+          <input id="inPass" class="input" type="text" />
+          <button id="genBtn" class="btn" title="Generate">Generate</button>
+        </div>
+        <label class="label">Notes</label>
+        <textarea id="inNotes" class="input" rows="3"></textarea>
+        <div class="row right">
+          <button id="saveBtn" class="btn primary">Save</button>
+        </div>
+      </details>
+    </section>
+
+    <dialog id="editDialog">
+      <form method="dialog" class="dialog-body">
+        <h2 class="dialog-title">Edit Credential</h2>
+        <input id="editId" type="hidden" />
+        <label class="label">Origins (comma separated)</label>
+        <input id="editOrigins" class="input" type="text" />
+        <label class="label">Username</label>
+        <input id="editUser" class="input" type="text" />
+        <label class="label">Password</label>
+        <div class="row">
+          <input id="editPass" class="input" type="text" />
+          <button id="editGen" class="btn" title="Generate" type="button">Generate</button>
+        </div>
+        <label class="label">Notes</label>
+        <textarea id="editNotes" class="input" rows="3"></textarea>
+        <div class="row right">
+          <button id="editCancel" class="btn" value="cancel">Cancel</button>
+          <button id="editSave" class="btn primary" value="default">Save</button>
+        </div>
+      </form>
+    </dialog>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
