@@ -108,6 +108,8 @@ git clone https://github.com/Cyber-Security-July-Dec-2025/B3.git
 
 ### Lock Vault
 <img width="524" height="480" alt="image" src="https://github.com/user-attachments/assets/7bc53960-2eb9-463b-bef5-c3697106310b" />
+### Options
+<img width="1906" height="804" alt="Screenshot 2025-09-30 024755" src="https://github.com/user-attachments/assets/abcd8753-2136-4ecb-bfa3-433477ce4375" />
 
 ---
 ## 📄 License
