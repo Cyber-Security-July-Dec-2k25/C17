@@ -35,7 +35,7 @@ All encryption happens **within your browser** — even if your local storage is
 
 ### 1. Clone or Download Repo
 ```bash
-git clone https://github.com/Cyber-Security-July-Dec-2025/B3.git
+git clone https://github.com/Cyber-Security-July-Dec-2k25/C17.git
 ```
 
 ## ⚡Load Extension
